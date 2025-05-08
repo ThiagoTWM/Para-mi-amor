@@ -48,5 +48,91 @@ body {
     max-width: 500px;
     max-height: 500px;
   }
+
+/* --- Estilos para hacer la página responsive (adaptable a diferentes pantallas) --- */
+
+/* Usamos una Media Query que aplica estilos cuando el ancho de la pantalla es
+   igual o menor a 768px (un breakpoint común para tablets y móviles) */
+@media (max-width: 768px) {
+
+    /* Ajustes para el body en pantallas pequeñas */
+    body {
+        /* Permite que la altura del body se ajuste al contenido */
+        height: auto;
+        /* Añade algo de padding para que el contenido no toque los bordes */
+        padding: 15px;
+        /* Quitamos el display flex del body para evitar conflictos */
+        display: block;
+    }
+
+    /* Ajustes para el contenedor principal */
+    .container {
+        /* Cambia la dirección del flexbox para apilar los elementos verticalmente */
+        flex-direction: column;
+        /* Usa todo el ancho disponible en pantallas pequeñas */
+        width: 100%;
+        /* Elimina el límite de ancho máximo */
+        max-width: none;
+        /* Centra los elementos cuando están apilados */
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Ajustes para el div del texto */
+    .texto {
+        /* No permitas que tome espacio flexible en la columna */
+        flex: none;
+        /* Usa todo el ancho disponible para el bloque de texto */
+        width: 100%;
+        /* Ajusta el padding para móviles */
+        padding: 10px;
+        /* Centra el texto dentro del bloque */
+        text-align: center;
+        /* Añade un poco de margen inferior para separar del canvas */
+        margin-bottom: 20px;
+    }
+
+    /* Ajusta tamaños de fuente en móviles si es necesario */
+    .texto h2 {
+         font-size: 1.6em; /* Un poco más pequeño que en desktop */
+         margin-bottom: 10px;
+    }
+
+     .texto p {
+         font-size: 1.1em; /* Un poco más pequeño que en desktop */
+         margin: 8px 0;
+     }
+
+      .contador {
+          margin-top: 15px;
+          font-size: 1.1em;
+      }
+
+
+    /* Ajustes para el Canvas */
+    canvas {
+        /* No permitas que tome espacio flexible en la columna */
+        flex: none;
+        /* Limita el ancho máximo del canvas al 100% del contenedor */
+        max-width: 100%;
+        /* Permite que la altura se ajuste manteniendo la proporción (si se definió en HTML/JS) */
+        height: auto;
+        /* Asegura que no tenga un max-height fijo si no es necesario */
+        max-height: none; /* O ajusta a un valor específico si lo necesitas */
+    }
+
+    /* Opcional: Si necesitas ajustar el tamaño base del canvas en móviles,
+       tendrías que hacerlo también en el JavaScript donde lo creas o configuras */
+    /* Ejemplo (ajustando width/height directamente, pero es mejor controlarlo desde JS si ya lo haces ahí)
+    canvas {
+        width: 300px;
+        height: 300px;
+    }
+    */
+
+}
+
+/* Puedes añadir más Media Queries para otros tamaños de pantalla si lo necesitas
+   @media (max-width: 480px) { ... } */
   
     
