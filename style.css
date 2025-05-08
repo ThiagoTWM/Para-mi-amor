@@ -49,10 +49,6 @@ body {
     max-height: 500px;
   }
 
-/* --- Estilos para hacer la página responsive (adaptable a diferentes pantallas) --- */
-
-/* Usamos una Media Query que aplica estilos cuando el ancho de la pantalla es
-   igual o menor a 768px (un breakpoint común para tablets y móviles) */
 @media (max-width: 768px) {
 
     /* Ajustes para el body en pantallas pequeñas */
@@ -78,7 +74,6 @@ body {
         justify-content: center;
     }
 
-    /* Ajustes para el div del texto */
     .texto {
         /* No permitas que tome espacio flexible en la columna */
         flex: none;
@@ -92,7 +87,7 @@ body {
         margin-bottom: 20px;
     }
 
-    /* Ajusta tamaños de fuente en móviles si es necesario */
+
     .texto h2 {
          font-size: 1.6em; /* Un poco más pequeño que en desktop */
          margin-bottom: 10px;
@@ -109,26 +104,18 @@ body {
       }
 
 
-    /* Ajustes para el Canvas */
+
     canvas {
-        /* No permitas que tome espacio flexible en la columna */
+
         flex: none;
-        /* Limita el ancho máximo del canvas al 100% del contenedor */
+
         max-width: 100%;
-        /* Permite que la altura se ajuste manteniendo la proporción (si se definió en HTML/JS) */
+     
         height: auto;
-        /* Asegura que no tenga un max-height fijo si no es necesario */
-        max-height: none; /* O ajusta a un valor específico si lo necesitas */
+
+        max-height: none; 
     }
 
-    /* Opcional: Si necesitas ajustar el tamaño base del canvas en móviles,
-       tendrías que hacerlo también en el JavaScript donde lo creas o configuras */
-    /* Ejemplo (ajustando width/height directamente, pero es mejor controlarlo desde JS si ya lo haces ahí)
-    canvas {
-        width: 300px;
-        height: 300px;
-    }
-    */
 
 }
 
